@@ -3,6 +3,10 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$/../../online-food-ordering/build/generated/sources/annotationProcessor/java/main">
       <sourceFolder url="file://$MODULE_DIR$/../../online-food-ordering/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+<<<<<<< HEAD
+=======
+      <sourceFolder url="file://$MODULE_DIR$/../../online-food-ordering/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+>>>>>>> master
     </content>
   </component>
 </module>

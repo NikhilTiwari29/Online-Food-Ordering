@@ -20,7 +20,11 @@ public class Restaurant {
     private User owner;
     private String name;
     private String description;
+<<<<<<< HEAD
     private String cuisine;
+=======
+    private String cuisineType;
+>>>>>>> master
     @OneToOne
     private Address address;
     @Embedded
