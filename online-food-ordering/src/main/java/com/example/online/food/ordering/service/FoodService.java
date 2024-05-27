@@ -11,14 +11,14 @@ public interface FoodService {
 
     Foods createFood(CreateFoodRequest createFoodRequest, Category category, Restaurant restaurant);
 
-    void deleteFood(Long foodId);
+    void deleteFoodFromRestaurant(Long foodId) throws Exception;
 
     List<Foods> getRestaurantFood(Long restaurantId,
                                          boolean isVegetarian,boolean isNonVeg,boolean isSeasonal,String foodCategory);
 
     List<Foods> searchFood(String keyword);
 
-    Foods findFoodById(Long foodId);
+    Foods findFoodById(Long foodId) throws Exception;
 
     Foods updateAvailabilityStatus(Long foodId);
 

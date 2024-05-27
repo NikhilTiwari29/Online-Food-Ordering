@@ -17,7 +17,7 @@ public class Foods {
     private Long id;
     private String name;
     private String description;
-    private Long price;
+    private int price;
     @ManyToOne
     private Category foodCategory;
     @Column(length = 1000)
