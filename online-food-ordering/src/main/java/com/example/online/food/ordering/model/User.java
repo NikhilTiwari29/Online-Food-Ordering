@@ -2,10 +2,7 @@ package com.example.online.food.ordering.model;
 
 import com.example.online.food.ordering.dto.RestaurantDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-<<<<<<< HEAD
-=======
 import com.fasterxml.jackson.annotation.JsonProperty;
->>>>>>> master
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,10 +19,7 @@ public class User {
     private Long id;
     private String fullName;
     private String email;
-<<<<<<< HEAD
-=======
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
->>>>>>> master
     private String password;
     private UserRole userRole = UserRole.ROLE_CUSTOMER;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "customer")

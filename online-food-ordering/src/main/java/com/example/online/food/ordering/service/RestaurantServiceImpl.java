@@ -48,7 +48,7 @@ public class RestaurantServiceImpl implements RestaurantService{
 
     @Override
     public Restaurant updateRestaurant(Long restaurantId, CreateRestaurantRequest updateRestaurantRequest) throws Exception {
-        Restaurant restaurant = findRestaurantById(restaurantId);
+        Restaurant restaurant = findRestaurantByRestaurantId(restaurantId);
         if (restaurant.getCuisineType() != null){
             restaurant.setCuisineType(updateRestaurantRequest.getCuisineType());
         }
@@ -63,7 +63,7 @@ public class RestaurantServiceImpl implements RestaurantService{
 
     @Override
     public void deleteRestaurant(Long restaurantId) throws Exception {
-        Restaurant restaurant = findRestaurantById(restaurantId);
+        Restaurant restaurant = findRestaurantByRestaurantId(restaurantId);
         restaurantRepository.delete(restaurant);
     }
 
@@ -80,7 +80,7 @@ public class RestaurantServiceImpl implements RestaurantService{
     }
 
     @Override
-    public Restaurant findRestaurantById(Long restaurantId) throws Exception {
+    public Restaurant findRestaurantByRestaurantId(Long restaurantId) throws Exception {
         Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantId);
         if (restaurant.isEmpty()){
             throw new Exception("Restaurant not found with restaurantId: " + restaurantId);
@@ -89,7 +89,7 @@ public class RestaurantServiceImpl implements RestaurantService{
     }
 
     @Override
-    public Restaurant getRestaurantById(Long userId) throws Exception {
+    public Restaurant getRestaurantByUserId(Long userId) throws Exception {
         Restaurant restaurant = restaurantRepository.findByOwnerId(userId);
         if (restaurant == null){
             throw new Exception("Restaurant not found with userId: " + userId);
@@ -99,7 +99,7 @@ public class RestaurantServiceImpl implements RestaurantService{
 
     @Override
     public RestaurantDto addFavouriteRestaurant(Long restaurantId, Long userId) throws Exception {
-        Restaurant restaurant = findRestaurantById(restaurantId);
+        Restaurant restaurant = findRestaurantByRestaurantId(restaurantId);
         Optional<User> userOptional = userRepository.findById(userId);
 
         if (!userOptional.isPresent()) {
@@ -135,7 +135,7 @@ public class RestaurantServiceImpl implements RestaurantService{
 
     @Override
     public Restaurant updateRestaurantStatus(Long restaurantId) throws Exception {
-        Restaurant restaurant = findRestaurantById(restaurantId);
+        Restaurant restaurant = findRestaurantByRestaurantId(restaurantId);
         restaurant.setOpen(!restaurant.isOpen());
         return restaurantRepository.save(restaurant);
     }

@@ -63,7 +63,7 @@ public class AdminRestaurantController {
             @RequestHeader("Authorization") String jwtToken
     ) throws Exception {
         User user = userService.findUserByJwtToken(jwtToken);
-        Restaurant restaurant = restaurantService.getRestaurantById(user.getId());
+        Restaurant restaurant = restaurantService.getRestaurantByUserId(user.getId());
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 }

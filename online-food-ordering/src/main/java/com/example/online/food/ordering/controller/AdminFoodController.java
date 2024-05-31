@@ -28,7 +28,7 @@ public class AdminFoodController {
 
     @PostMapping
     private ResponseEntity<Foods> createFood(@RequestBody CreateFoodRequest createFoodRequest) throws Exception {
-        Restaurant restaurant = restaurantService.findRestaurantById(createFoodRequest.getRestaurantId());
+        Restaurant restaurant = restaurantService.findRestaurantByRestaurantId(createFoodRequest.getRestaurantId());
         Foods foods = foodService.createFood(createFoodRequest,createFoodRequest.getCategory(),restaurant);
         return new ResponseEntity<>(foods, HttpStatus.CREATED);
     }

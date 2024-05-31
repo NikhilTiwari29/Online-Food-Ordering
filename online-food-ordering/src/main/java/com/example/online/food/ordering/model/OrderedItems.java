@@ -16,6 +16,6 @@ public class OrderedItems {
     @ManyToOne
     private Foods foods;
     private int quantity;
-    private Long totalPrice;
+    private int totalPrice;
     private List<String> ingredients;
 }

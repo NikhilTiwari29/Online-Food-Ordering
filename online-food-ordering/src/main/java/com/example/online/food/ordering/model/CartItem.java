@@ -22,5 +22,5 @@ public class CartItem {
     private Foods foods;
     private int quantity;
     private List<String> ingredientsItems;
-    private Long totalPrice;
+    private int totalPrice;
 }

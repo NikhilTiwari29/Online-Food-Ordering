@@ -41,7 +41,7 @@ public class RestaurantController {
     public ResponseEntity<Restaurant> findRestaurantById(
             @PathVariable Long id
     ) throws Exception {
-        Restaurant restaurant = restaurantService.findRestaurantById(id);
+        Restaurant restaurant = restaurantService.findRestaurantByRestaurantId(id);
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 
